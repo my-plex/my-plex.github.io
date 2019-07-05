@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="uk-es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Voice cloud</title>
+    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="fonts/museosans/museosans.css">
+    <link rel="stylesheet" href="fonts/roboto/roboto.css">
+    <script src="component/jquery/jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function (e) {
+            $("#frmContact").on('submit', (function (e) {
+                e.preventDefault();
+                $("#mail-status").hide();
+                $('#send-message').hide();
+                $('#loader-icon').show();
+                $.ajax({
+                    url: "contact.php",
+                    type: "POST",
+                    dataType: 'json',
+                    data: {
+                        "name": $('input[name="name"]').val(),
+                        "email": $('input[name="email"]').val(),
+                        "phone": $('input[name="phone"]').val(),
+                        "content": $('textarea[name="content"]').val(),
+                        "g-recaptcha-response": $('textarea[id="g-recaptcha-response"]').val()
+                    },
+                    success: function (response) {
+                        $("#mail-status").show();
+                        $('#loader-icon').hide();
+                        if (response.type == "error") {
+                            $('#send-message').show();
+                            $("#mail-status").attr("class", "error");
+                        } else if (response.type == "message") {
+                            $('#send-message').hide();
+                            $("#mail-status").attr("class", "success");
+                        }
+                        $("#mail-status").html(response.text);
+                    },
+                    error: function () { }
+                });
+            }));
+        });
+    </script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+
+<section class="main">
+        <div class="violet-light"></div>
+        <div class="pink-light"></div>
+        
+        <div class="clouds">
+            <div class="first"></div>
+            <div class="second"></div>
+        </div>
+
+        <div class="container">
+
+            <div class="hamburger-menu">
+                <input id="menu__toggle" type="checkbox">
+                <label class="menu__btn" for="menu__toggle">
+                    <span></span>
+                </label>
+                <ul class="menu__box ">
+                    <li><a class="menu__item" href="#sobre-nosotros">SOBRE NOSOTROS</a></li>
+                    <li><a class="menu__item" href="#servicios">SERVICIOS</a></li>
+                    <li><a class="menu__item" href="#apoyo">APOYO</a></li>
+                    <li><a class="menu__item" href="#contacto">CONTACTO</a></li>
+                </ul>
+            </div>
+
+            <div class="navigation">
+                <a class="menu" href="#sobre-nosotros">SOBRE NOSOTROS</a>
+                <a class="menu" href="#servicios">SERVICIOS</a>
+                <a class="menu" href="#apoyo">APOYO</a>
+                <a class="menu" href="#contacto">CONTACTO</a>
+                <!-- <ul>
+                    <li>
+                        <a href="#sobre-nosotros">
+                            <span class="">SOBRE NOSOTROS</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#servicios">
+                            <span class="">SERVICIOS</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#apoyo">
+                            <span class="">APOYO</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <a href="#contacto">
+                            <span class="">CONTACTO</span>
+                        </a>
+                    </li>
+                </ul> -->
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <h1>Voice cloud</h1>
+                    <img class="logo logo-white" src="foto/logo_white.svg" alt="Voice cloud">
+                    <h2 class="text-white no-uppercase padding-buttom-53">
+                        La mejor solución para<br>
+                        mantener tu negocio<br>
+                        conectado 24/7
+                    </h2>
+                    <h4 class="text-white">
+                        Las avanzadas tecnologías de Voice Cloud
+                        ofrecen mayor flexibilidad y productividad
+                        a la hora de telefonizar tu oficina
+                    </h4>
+                </div>
+                <div class="phone col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="phone-img">
+                        <img src="foto/phone.png" alt="phone">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+</section>
+<section class="only-mobile">
+    <div class="container">
+        <h2 class="no-uppercase padding-buttom-53">
+            La mejor solución para<br>
+            mantener tu negocio<br>
+            conectado 24/7
+        </h2>
+        <h4 class="">
+            Las avanzadas tecnologías de Voice Cloud
+            ofrecen mayor flexibilidad y productividad
+            a la hora de telefonizar tu oficina
+        </h4>
+    </div>
+
+</section>
+
+<section class="sobre-nosotros">
+    <div class="container">
+        <a name="sobre-nosotros"></a>
+        <h2>SOBRE NOSOTROS</h2>
+        <div class="row">
+            <h5 class="col-sm-12 col-md-6 col-lg-6 col-xl-6 margin-top-53">
+                Voice Cloud somos un operador de comunicaciones registrado
+                en Comisión Nacional de los Mercados y la Competencia CNMC como Operador de servicios vocales
+                nómadas y servicio telefónico fijo
+                y presente en el sector desde el año 2016. Contamos con experiencia
+                e infraestructuras ampliamente desarrolladas que nos permiten ofrecer las mejores soluciones en
+                el
+                segmento de las comunicaciones
+                de las empresas.
+            </h5>
+            <h5 class="col-sm-12 col-md-6 col-lg-6 col-xl-6 margin-top-53">
+                Telefonía IP, centralita virtual, amplia selección de números virtuales, útiles integraciones y
+                mucho más. Disponemos de soluciones flexibles incluso para las demandas más complejas. Ofrecemos
+                las
+                herramientas ideales para la comunicación con los clientes
+                y distribución de llamadas dentro de la empresa.
+
+            </h5>
+
+
+        </div>
+        <h3 class="margin-bottom-53 margin-top-53 vertical">
+            Elige VOICE CLOUD y mantente comunicado<br>
+            en todo momento
+        </h3>
+        <div class="padding-buttom-98">
+            <div class="row">
+                <div class="text-center col-sm-12 col-md-6 col-xl-3">
+                    <img class="icon padding-left-11" src="foto/EN_CASA.svg" alt="EN CASA">
+                    <h4 class="text-icon text-violet">EN CASA</h4>
+                </div>
+                <div class="text-center col-sm-12 col-md-6 col-xl-3">
+                    <img class="icon" src="foto/EN_EL_RABAJO.svg" alt="EN EL RABAJO">
+                    <h4 class="text-icon text-violet">EN EL RABAJO</h4>
+                </div>
+                <div class="text-center col-sm-12 col-md-6 col-xl-3">
+                    <img class="icon" src="foto/DE_VIAJE_DE_NEGOCIOS.svg" alt="DE VIAJE DE NEGOCIOS">
+                    <h4 class="text-icon text-violet">DE VIAJE<br>DE NEGOCIOS</h4>
+                </div>
+                <div class="text-center col-sm-12 col-md-6 col-xl-3">
+                    <img class="icon" src="foto/DE_VACACIONES.svg" alt="DE VACACIONES">
+                    <h4 class="text-icon text-violet">DE VACACIONES</h4>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="line-icon">
+            <div class="block-icon">
+                <svg class="icon" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 169.3 177.6"
+                    enable-background="new 0 0 169.3 177.6" xml:space="preserve">
+                    <g>
+                        <g>
+                            <path fill="#FF8800" d="M143.4,83.7c-0.8-0.3-1.9-0.5-2.9-0.7l0,0c-0.2,0-0.3,0-0.3,0c-1.2,0-2,1-2,2v0.2c0,5.6-0.7,11-1.9,16.1
+                                   c-1.4,5.2-3.2,10.3-5.6,15.2l0,0c0,0.2-0.2,0.2-0.2,0.3c-0.3,1.2,0.2,2.4,1.4,2.9c1,0.3,1.9,0.5,3,0.7c1,0.2,2,0.3,3,0.3
+                                   c2,0,3.9-0.3,5.6-0.8c2.9-0.8,5.6-2.5,7.6-4.7l0,0l0,0c3.4-3.4,5.4-8.1,5.4-13.4c0-4.7-1.7-9-4.6-12.3
+                                   C149.7,87,146.8,84.9,143.4,83.7z M148,112.2L148,112.2c-1.4,1.4-2.9,2.4-4.6,3c-1.7,0.7-3.6,1.2-5.6,1.2c-0.7,0-1.4,0-2-0.2
+                                   c2-4.4,3.6-9,4.7-13.7c1.2-4.7,1.9-9.5,2-14.4c0.3,0.2,0.7,0.2,1,0.3c2,0.8,3.9,2.2,5.2,3.9c2.2,2.5,3.4,5.8,3.4,9.5
+                                   C152,105.9,150.5,109.5,148,112.2z M160.5,79.9c-4.4-4.7-10.3-8.1-17.1-9.3c-1.2-0.2-2.5-0.3-3.9-0.5c-0.2,0-0.3,0-0.5,0l0,0H3.6
+                                   c-1.2,0-2,0.8-2.2,2c-0.3,2.2-0.7,4.4-0.8,6.6c-0.2,2.4-0.3,4.6-0.3,6.8c0,20,7.9,38.1,20.8,51.1s30.8,21.1,50.4,21.1
+                                   c4.6,0,9-0.5,13.4-1.4c6.3-1.2,12.2-3.2,17.8-5.9c9.3-4.6,17.4-11.2,23.8-19.1c1.5,0.7,3.2,1.2,4.9,1.5c2.2,0.5,4.4,0.7,6.8,0.7
+                                   c1.9,0,3.7-0.2,5.6-0.5c6.4-1.2,12.2-4.4,16.6-8.8c5.8-5.8,9.1-13.7,9.1-22.5C169.1,93.4,165.9,85.6,160.5,79.9z M157,121.3
+                                   c-3.6,3.7-8.3,6.3-13.5,7.4c-1.9,0.3-3.7,0.7-5.6,0.7c-2,0-4.1-0.2-5.8-0.7c-1.9-0.5-3.7-1-5.6-1.9l0,0c-0.8-0.5-2-0.2-2.7,0.7
+                                   c-6.3,8.1-14.2,14.7-23.3,19.1c-4.9,2.4-10.3,4.2-15.9,5.4c-4.2,0.8-8.8,1.4-13.4,1.4c-18.4,0-35.2-7.6-47.2-20
+                                   c-12-12.3-19.6-29.3-19.6-48c0-2.2,0.2-4.4,0.3-6.4c0.2-1.5,0.3-3,0.5-4.6h133.4h0.2c1.5,0,3,0.3,4.4,0.5
+                                   c5.4,1.2,10.1,3.9,13.9,7.9c4.6,4.9,7.4,11.5,7.4,18.9C164.7,109.5,161.9,116.4,157,121.3z M151,160.7H2.2c-1.2,0-2.2,1-2.2,2.2
+                                   v12.5c0,1.2,1,2.2,2.2,2.2H151c1.2,0,2.2-1,2.2-2.2v-12.5C153.2,161.7,152.2,160.7,151,160.7z M148.8,173.2H4.4v-8.1h144.4V173.2z
+                                    M37.2,28.6L37.2,28.6c0.3,1,1.2,2.5,2.2,4.6c1.7,3.2,3.9,7.4,5.2,11c0.8,2.5,1.2,4.4,0.3,4.7c-4.2,1.5-6.1,4.9-6.4,8.5
+                                   c0,1.4,0.2,2.5,0.5,3.7c0.3,1.2,1,2.4,1.9,3.4l0,0l0,0c2,2.4,4.9,3.7,8.6,2.5c0.2,0,0.3-0.2,0.5-0.2c5.4-1.9,9.1-5.6,11.3-10.1
+                                   c2.2-4.9,2.7-10.8,1.2-16.6c-1-4.2-3-7.9-5.1-11.5v-0.2c-0.5-1-1-2-1.7-3c-0.7-1.2-1.5-3-1.9-4.9c-0.2-1.2-0.2-2.4,0.5-2.9
+                                   c3.7-2.4,4.9-6.1,4.2-9.5C58.5,7,58,5.6,57.3,4.6s-1.5-2-2.5-2.9c-1.5-1.2-3.4-1.9-5.4-1.7C48,0,46.5,0.5,45,1.5
+                                   c-4.6,2.9-7.3,6.9-8.6,11.5C35.2,17.8,35.5,23.4,37.2,28.6L37.2,28.6z M40.8,14.2c1-3.6,3.2-6.8,6.8-9c0.7-0.5,1.4-0.7,2-0.7
+                                   c1-0.2,2,0.2,2.9,0.8c0.5,0.3,1,1,1.4,1.5c0.3,0.7,0.7,1.4,0.8,2c0.3,1.7-0.3,3.7-2.2,4.9c-1.9,1.2-2.7,3-2.7,4.9v1
+                                   c0,0.5,0.2,1,0.2,1.5c0.5,2.4,1.5,4.7,2.2,6.1c0.5,1,1,2,1.7,3v0.2c1.9,3.4,3.7,6.9,4.6,10.5c1.2,4.7,0.8,9.6-1,13.5
+                                   c-1.5,3.2-4.1,5.9-7.9,7.4c-0.3,0.2-0.5,0.2-0.8,0.3c-2,0.7-3.6,0.2-4.4-1l0,0c-0.5-0.5-0.7-1.2-1-1.9c-0.2-0.7-0.3-1.5-0.3-2.2
+                                   c0.2-1.9,1.2-3.7,3.4-4.6c1.9-0.7,2.9-1.9,3.2-3.6c0.2-1,0.2-2.2,0-3.6c-0.2-1-0.5-2.2-0.8-3.4c-1.4-3.9-3.7-8.3-5.4-11.7
+                                   c-1-1.9-1.7-3.2-2-3.9l0,0C39.9,22.9,39.6,18.3,40.8,14.2z M75.9,28.6L75.9,28.6c0.3,1,1.2,2.5,2.2,4.6c1.7,3.2,3.9,7.4,5.2,11
+                                   c0.8,2.4,1.2,4.4,0.3,4.7c-4.2,1.5-6.1,4.9-6.4,8.5c0,1.4,0.2,2.5,0.5,3.7c0.3,1.2,1,2.4,1.9,3.4l0.2,0.2c2,2.2,4.9,3.6,8.6,2.4
+                                   c0.2,0,0.3-0.2,0.5-0.2c5.4-1.9,9.1-5.6,11.3-10.1v-0.2c2.2-4.9,2.5-10.7,1.2-16.4c-1-4.2-3-7.9-5.1-11.5c-0.5-1-1.2-2-1.7-3.2
+                                   c-0.7-1.2-1.5-3-1.9-4.9c-0.2-1.2-0.2-2.4,0.5-2.9c3.7-2.4,4.9-6.1,4.2-9.5c-0.2-1.2-0.7-2.5-1.4-3.6s-1.5-2-2.5-2.9
+                                   c-1.5-1.2-3.4-1.9-5.4-1.7c-1.4,0-2.9,0.5-4.4,1.5c-4.6,2.9-7.3,6.9-8.6,11.5C73.9,17.8,74.2,23.4,75.9,28.6L75.9,28.6z
+                                    M79.7,14.2c1-3.6,3.2-6.8,6.8-9c0.7-0.5,1.4-0.7,2-0.7c1-0.2,2,0.2,2.9,0.8c0.5,0.3,1,1,1.4,1.5c0.3,0.7,0.7,1.4,0.8,2
+                                   c0.3,1.7-0.3,3.7-2.2,4.9c-1.9,1.2-2.7,3-2.7,4.9v1c0,0.5,0.2,1,0.2,1.5c0.5,2.4,1.5,4.7,2.2,6.1c0.5,1,1.2,2.2,1.7,3.2
+                                   c1.9,3.4,3.7,6.9,4.6,10.5c1.2,4.7,0.8,9.5-0.8,13.5v0.2c-1.5,3.2-4.1,5.9-7.9,7.4c-0.3,0.2-0.5,0.2-0.8,0.3
+                                   c-1.9,0.7-3.4,0.2-4.4-1v-0.2c-0.5-0.5-0.7-1.2-1-1.9c-0.2-0.7-0.3-1.5-0.3-2.2c0.2-1.9,1.2-3.7,3.4-4.6c1.9-0.7,2.9-1.9,3.2-3.6
+                                   c0.2-1,0.2-2.2,0-3.4c-0.2-1-0.5-2.2-0.8-3.4c-1.4-3.9-3.7-8.3-5.4-11.7c-1-1.9-1.7-3.2-2-3.9l0,0C78.6,22.9,78.5,18.3,79.7,14.2z
+                                   " />
+                        </g>
+                    </g>
+                </svg>
+                <h4 class="text-icon">EN CASA</h4>
+            </div>
+            <div class="block-icon">
+                <img class="icon" src="foto/EN_EL_RABAJO.svg" alt="EN EL RABAJO">
+                <h4 class="text-icon">EN EL RABAJO</h4>
+            </div>
+            <div class="block-icon">
+                <img class="icon" src="foto/DE_VIAJE_DE_NEGOCIOS.svg" alt="DE VIAJE DE NEGOCIOS">
+                <h4 class="text-icon">DE VIAJE<br>DE NEGOCIOS</h4>
+            </div>
+            <div class="block-icon">
+                <img class="icon" src="foto/DE_VACACIONES.svg" alt="DE VACACIONES">
+                <h4 class="text-icon">DE VACACIONES</h4>
+            </div>
+
+        </div> -->
+</section>
+
+<section class="servicios">
+    <div class="container">
+        <a name="servicios"></a>
+        <h2 class="padding-buttom-53">
+            NOS DIFERENCIA DE LOS DEMAS
+        </h2>
+
+        <div class="row">
+            <div class="text-center col-sm-12 col-md-6 col-xl-3">
+                <img class="icon" src="foto/CALIDAD.svg" alt="CALIDAD">
+                <h4 class="text-icon text-violet">CALIDAD</h4>
+            </div>
+            <div class="text-center col-sm-12 col-md-6 col-xl-3">
+                <img class="icon" src="foto/SENCILLEZ.svg" alt="SENCILLEZ">
+                <h4 class="text-icon text-violet">SENCILLEZ</h4>
+            </div>
+            <div class="text-center col-sm-12 col-md-6 col-xl-3">
+                <img class="icon" src="foto/FIABILIDAD.svg" alt="FIABILIDAD">
+                <h4 class="text-icon text-violet">FIABILIDAD</h4>
+            </div>
+            <div class="text-center col-sm-12 col-md-6 col-xl-3">
+                <img class="icon" src="foto/SOPORTE.svg" alt="SOPORTE">
+                <h4 class="text-icon text-violet">SOPORTE</h4>
+            </div>
+        </div>
+        <div class="assist">
+            <img src="foto/assist.png" alt="assist">
+        </div>
+    </div>
+</section>
+
+<section class="apoyo">
+    <div class="container">
+        <a name="apoyo"></a>
+        <h2 class="text-white">
+            Otras características<br>
+            y funcionalidades de VOICE CLOUD
+        </h2>
+        <h4 class="text-white padding-53">
+            Nuestra tecnología permite reducir visiblemente los costes de telefonía tanto a nivel corporativo
+            como a nivel particular, mejorar la comunicación y evitar equipos innecesarios
+        </h4>
+        <div class="row">
+            <div class="text-center col-sm-12 col-md-6 col-xl-3">
+                <img class="icon" src="foto/FÁCIL_CONFIGURACIÓN.svg" alt="FÁCIL CONFIGURACIÓN">
+                <h4 class="text-icon text-white">FÁCIL<br>CONFIGURACIÓN</h4>
+                <h5 class="text-white text-caption">
+                    Get up and running quickly.
+                    Cloud-based VoIP service means
+                    no phone system to buy.
+                </h5>
+            </div>
+            <div class="text-center col-sm-12 col-md-6 col-xl-3">
+                <img class="icon" src="foto/INTEGRACIÓN_CON_EL_MÓVIL.svg" alt="INTEGRACIÓN CON EL MÓVIL">
+                <h4 class="text-icon text-white">INTEGRACIÓN<br>CON EL MÓVIL</h4>
+                <h5 class="text-white text-caption">
+                    Make or receive calls from
+                    desktop or smartphone using
+                    one number. And, change call
+                    routing anytime.
+                </h5>
+            </div>
+            <div class="text-center col-sm-12 col-md-6 col-xl-3">
+                <img class="icon" src="foto/CALIDAD_DE_COMUNICACIÓN.svg" alt="CALIDAD DE COMUNICACIÓN">
+                <h4 class="text-icon text-white">CALIDAD<br>DE COMUNICACIÓN</h4>
+                <h5 class="text-white text-caption">
+                    Get crystal-clear call quality with
+                    IP cloud broadband service.
+                </h5>
+            </div>
+            <div class="text-center col-sm-12 col-md-6 col-xl-3">
+                <img class="icon" src="foto/FÁCIL_MANEJO.svg" alt="FÁCIL MANEJO">
+                <h4 class="text-icon text-white">FÁCIL<br>MANEJO</h4>
+                <h5 class="text-white text-caption">
+                    Manage your services, pay your
+                    bill and obtain support quickly
+                    and easily with our online portal.
+                </h5>
+            </div>
+        </div>
+        <div class="assist">
+        </div>
+</section>
+
+<section class="contacto">
+    <div class="container">
+        <a name="contacto"></a>
+        <h2>
+            ¿CÓMO EMPEZAR?
+        </h2>
+        <h4 class="padding-top-53">
+            Para conectar la telefonía IP simplemente rellena el formulario y nuestros comerciales te contactarán
+            para resolver todas tus dudas a la mayor brevedad posible.
+        </h4>
+        <h3 class="margin-53 vertical">
+            ¡Contáctanos, estaremos encantados<br>
+            de atenderte!
+        </h3>
+        <div class="contact">
+            <div class="row">
+                <div class="adress col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div class="adress-table">
+                        <img class="icon-place" src="foto/place_icon.svg" alt="place icon">
+                        <h5 class="text-contact">Carres Sant Carlos, 4, Barcelona<br>
+                            España
+                        </h5>
+                    </div>
+                    <div class="adress-table">
+                        <img class="icon-phone" src="foto/phone_icon.svg" alt="phone icon">
+                        <h5 class="text-contact">+44 131 5070174</h5>
+                    </div>
+                    <div class="adress-table">
+                        <img class="icon-mail" src="foto/mail_icon.svg" alt="mail icon">
+                        <h5 class="text-contact">info@ipcloudlp.com</h5>
+                    </div>
+                </div>
+
+                <div class="form col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <div id="central">
+                        <div class="content">                           
+                            <div id="message">
+                                <form id="frmContact" action="" method="POST" novalidate="novalidate">
+                                    <div class="field">
+                                        <input type="text" id="name" name="name" placeholder=" Nombre:"
+                                            title="Please enter your name" class="required" aria-required="true"
+                                            required>
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" id="email" name="email"
+                                            placeholder=" E-mail o teléfono de contacto:"
+                                            title="Please enter your email address" class="required email"
+                                            aria-required="true" required>
+                                    </div>
+                                    <div class="field">
+                                        <input type="text" id="phone" name="phone"
+                                            placeholder=" Enter your phone number here"
+                                            title="Nombre de la empresa:" class="required phone"
+                                            aria-required="true" required>
+                                    </div>
+                                    <div class="field">
+                                        <textarea id="comment-content" name="content"
+                                            placeholder=" Mensaje:"></textarea>
+                                    </div>
+                                    <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY; ?>"></div>
+                                    <div id="mail-status"></div>
+                                    <button type="Submit" id="send-message" style="clear:both;">ENVIAR</button>
+                                </form>
+                                <div id="loader-icon" style="display:none;"><img src="img/loader.gif" /></div>
+                            </div>
+                        </div><!-- content -->
+                    </div><!-- central -->
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                    <img class="logo-pink" src="foto/logo_pink.svg" alt="Voice cloud">
+                </div>
+                
+                <h5 class="col-sm-12 col-md-6 col-lg-6 col-xl-6">© 2019 Voice Cloud. Todos los derechos
+                    reservados.</h5>
+            </div>
+        </div>
+    </div>
+</section>
