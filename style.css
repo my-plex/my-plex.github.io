@@ -28,6 +28,9 @@
     
     z-index: 100;
 }
+.inverted {
+	filter: invert(100%);
+}
 @media only screen and (min-width: 1025px) {
     .hamburger-menu {
         display: none;
@@ -57,7 +60,7 @@
     position: absolute;
     width: 100%;
     height: 2px;
-    background-color: white;
+    background-color: #dee2e6;
   }
   .menu__btn > span::before {
     content: '';
@@ -73,15 +76,20 @@
     position: fixed;
     visibility: hidden;
     top: 0;   
-    width: 300px;
-    height: 335px;
+    width: 50%;
+    height: 365px;
     margin: 0;
     padding: 80px 0;
     list-style: none;
     text-align: center;
     background-color: #5f032a;
     box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
-    z-index: 99;
+    z-index: 99;    
+}
+@media only screen and (max-width: 414px) {
+    .menu__box {
+        width: 100%;
+    }
 }
   
   /* элементы меню */
@@ -258,7 +266,7 @@ h5 {
     z-index: 2;
 }
 
-.light .violet-light {
+.violet-light {
     background-image: radial-gradient(circle, #911d64, #881555, #7f0d46, #750739, #6a032d, #6a032d, #6a032d);
     position: absolute;
     border-radius: 50%;
@@ -268,7 +276,7 @@ h5 {
     top: 250px;
 }
 
-.light .pink-light {
+.pink-light {
     background-image: radial-gradient(circle, #e50051, #c50049, #a60041, #870237, #6a032d, #6a032d, #6a032d);
     position: absolute;
     border-radius: 50%;
@@ -433,7 +441,8 @@ h5 {
 
 .apoyo {
     width: 100%;
-    background-color: #6a032d;
+    /* background-color: #6a032d; */
+    background: linear-gradient(90deg, rgba(117,2,79,1) 0%, rgba(89,23,69,1) 100%);
 }
 
 .text-caption {
@@ -442,6 +451,12 @@ h5 {
 
 /* Contacto */
 
+.back {
+    margin-top: -25px;
+    padding-top: 43px;
+    width: 100%;
+    background-image: linear-gradient(to bottom, #f2f1f1, #f5f4f5, #f8f8f8, #fcfcfc, #ffffff);
+}
 .contacto {
     background-image: url(foto/map.svg);
     max-height: 1136px;
@@ -500,14 +515,16 @@ h5 {
 #name,
 #email,
 #phone {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: 40px;
     background-color: #ffffff;
     border: 1px solid #cfcfcf;
     margin-bottom: 20px;
 }
 #comment-content {
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: 126px;
     background-color: #ffffff;
     border: 1px solid #cfcfcf;
@@ -547,6 +564,7 @@ h5 {
 
 .footer {    
     width: 100%;
+    margin-top: 144px;
 }
 
 .footer :first-child {

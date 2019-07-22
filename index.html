@@ -48,42 +48,66 @@
         });
     </script>
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <!-- <script>
+        $(function () {
+            var pull = $('#menu__toggle');
+            menu = $('menu__box');
+            menuHeight = menu.height();
+
+            $(pull).on('click', function (e) {
+                e.preventDefault();
+                menu.slideToggle();
+            });
+
+            $(window).resize(function () {
+                var w = $(window).width();
+                if (w > 320 && menu.is(':hidden')) {
+                    menu.removeAttr('style');
+                }
+            });
+        });
+    </script> -->
+    <script>
+        $(document).ready(function () {
+            $('hamburger-menu ul').hide();
+            $('.hamburger-menu ul li').click(function () {
+            $('.hamburger-menu ul').slideToggle(100);
+  
+            });
+        });        
+    </script>
 </head>
 
-<body>
-    
-
-
 <section class="main">
-        <div class="violet-light"></div>
-        <div class="pink-light"></div>
-        
-        <div class="clouds">
-            <div class="first"></div>
-            <div class="second"></div>
+    <div class="violet-light"></div>
+    <div class="pink-light"></div>
+
+    <div class="clouds">
+        <div class="first"></div>
+        <div class="second"></div>
+    </div>
+
+    <div class="container">
+
+        <div class="hamburger-menu">
+            <input id="menu__toggle" type="checkbox">
+            <label class="menu__btn" for="menu__toggle">
+                <span></span>
+            </label>
+            <ul class="menu__box ">
+                <li><a class="menu__item" href="#sobre-nosotros">SOBRE NOSOTROS</a></li>
+                <li><a class="menu__item" href="#servicios">SERVICIOS</a></li>
+                <li><a class="menu__item" href="#apoyo">APOYO</a></li>
+                <li><a class="menu__item" href="#contacto">CONTACTO</a></li>
+            </ul>
         </div>
 
-        <div class="container">
-
-            <div class="hamburger-menu">
-                <input id="menu__toggle" type="checkbox">
-                <label class="menu__btn" for="menu__toggle">
-                    <span></span>
-                </label>
-                <ul class="menu__box ">
-                    <li><a class="menu__item" href="#sobre-nosotros">SOBRE NOSOTROS</a></li>
-                    <li><a class="menu__item" href="#servicios">SERVICIOS</a></li>
-                    <li><a class="menu__item" href="#apoyo">APOYO</a></li>
-                    <li><a class="menu__item" href="#contacto">CONTACTO</a></li>
-                </ul>
-            </div>
-
-            <div class="navigation">
-                <a class="menu" href="#sobre-nosotros">SOBRE NOSOTROS</a>
-                <a class="menu" href="#servicios">SERVICIOS</a>
-                <a class="menu" href="#apoyo">APOYO</a>
-                <a class="menu" href="#contacto">CONTACTO</a>
-                <!-- <ul>
+        <div class="navigation">
+            <a class="menu" href="#sobre-nosotros">SOBRE NOSOTROS</a>
+            <a class="menu" href="#servicios">SERVICIOS</a>
+            <a class="menu" href="#apoyo">APOYO</a>
+            <a class="menu" href="#contacto">CONTACTO</a>
+            <!-- <ul>
                     <li>
                         <a href="#sobre-nosotros">
                             <span class="">SOBRE NOSOTROS</span>
@@ -112,31 +136,31 @@
                     </li>
                 </ul> -->
 
-            </div>
-
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                    <h1>Voice cloud</h1>
-                    <img class="logo logo-white" src="foto/logo_white.svg" alt="Voice cloud">
-                    <h2 class="text-white no-uppercase padding-buttom-53">
-                        La mejor solución para<br>
-                        mantener tu negocio<br>
-                        conectado 24/7
-                    </h2>
-                    <h4 class="text-white">
-                        Las avanzadas tecnologías de Voice Cloud
-                        ofrecen mayor flexibilidad y productividad
-                        a la hora de telefonizar tu oficina
-                    </h4>
-                </div>
-                <div class="phone col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                    <div class="phone-img">
-                        <img src="foto/phone.png" alt="phone">
-                    </div>
-                </div>
-            </div>
-
         </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <h1>Voice cloud</h1>
+                <img class="logo logo-white" src="foto/logo_white.svg" alt="Voice cloud">
+                <h2 class="text-white no-uppercase padding-buttom-53">
+                    La mejor solución para<br>
+                    mantener tu negocio<br>
+                    conectado 24/7
+                </h2>
+                <h4 class="text-white">
+                    Las avanzadas tecnologías de Voice Cloud
+                    ofrecen mayor flexibilidad y productividad
+                    a la hora de telefonizar tu oficina
+                </h4>
+            </div>
+            <div class="phone col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div class="phone-img">
+                    <img src="foto/phone.png" alt="phone">
+                </div>
+            </div>
+        </div>
+
+    </div>
 
 </section>
 <section class="only-mobile">
@@ -351,89 +375,90 @@
         </div>
 </section>
 
-<section class="contacto">
-    <div class="container">
-        <a name="contacto"></a>
-        <h2>
-            ¿CÓMO EMPEZAR?
-        </h2>
-        <h4 class="padding-top-53">
-            Para conectar la telefonía IP simplemente rellena el formulario y nuestros comerciales te contactarán
-            para resolver todas tus dudas a la mayor brevedad posible.
-        </h4>
-        <h3 class="margin-53 vertical">
-            ¡Contáctanos, estaremos encantados<br>
-            de atenderte!
-        </h3>
-        <div class="contact">
-            <div class="row">
-                <div class="adress col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <div class="adress-table">
-                        <img class="icon-place" src="foto/place_icon.svg" alt="place icon">
-                        <h5 class="text-contact">Carres Sant Carlos, 4, Barcelona<br>
-                            España
-                        </h5>
+<section class="back">
+    <div class="contacto">
+        <div class="container ">
+            <a name="contacto"></a>
+            <h2>
+                ¿CÓMO EMPEZAR?
+            </h2>
+            <h4 class="padding-top-53">
+                Para conectar la telefonía IP simplemente rellena el formulario y nuestros comerciales te contactarán
+                para resolver todas tus dudas a la mayor brevedad posible.
+            </h4>
+            <h3 class="margin-53 vertical">
+                ¡Contáctanos, estaremos encantados<br>
+                de atenderte!
+            </h3>
+            <div class="contact">
+                <div class="row">
+                    <div class="adress col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div class="adress-table">
+                            <img class="icon-place" src="foto/place_icon.svg" alt="place icon">
+                            <h5 class="text-contact">Carres Sant Carlos, 4, Barcelona<br>
+                                España
+                            </h5>
+                        </div>
+                        <div class="adress-table">
+                            <img class="icon-phone" src="foto/phone_icon.svg" alt="phone icon">
+                            <h5 class="text-contact">+44 131 5070174</h5>
+                        </div>
+                        <div class="adress-table">
+                            <img class="icon-mail" src="foto/mail_icon.svg" alt="mail icon">
+                            <h5 class="text-contact">info@ipcloudlp.com</h5>
+                        </div>
                     </div>
-                    <div class="adress-table">
-                        <img class="icon-phone" src="foto/phone_icon.svg" alt="phone icon">
-                        <h5 class="text-contact">+44 131 5070174</h5>
-                    </div>
-                    <div class="adress-table">
-                        <img class="icon-mail" src="foto/mail_icon.svg" alt="mail icon">
-                        <h5 class="text-contact">info@ipcloudlp.com</h5>
-                    </div>
-                </div>
 
-                <div class="form col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <div id="central">
-                        <div class="content">                           
-                            <div id="message">
-                                <form id="frmContact" action="" method="POST" novalidate="novalidate">
-                                    <div class="field">
-                                        <input type="text" id="name" name="name" placeholder=" Nombre:"
-                                            title="Please enter your name" class="required" aria-required="true"
-                                            required>
-                                    </div>
-                                    <div class="field">
-                                        <input type="text" id="email" name="email"
-                                            placeholder=" E-mail o teléfono de contacto:"
-                                            title="Please enter your email address" class="required email"
-                                            aria-required="true" required>
-                                    </div>
-                                    <div class="field">
-                                        <input type="text" id="phone" name="phone"
-                                            placeholder=" Enter your phone number here"
-                                            title="Nombre de la empresa:" class="required phone"
-                                            aria-required="true" required>
-                                    </div>
-                                    <div class="field">
-                                        <textarea id="comment-content" name="content"
-                                            placeholder=" Mensaje:"></textarea>
-                                    </div>
-                                    <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY; ?>"></div>
-                                    <div id="mail-status"></div>
-                                    <button type="Submit" id="send-message" style="clear:both;">ENVIAR</button>
-                                </form>
-                                <div id="loader-icon" style="display:none;"><img src="img/loader.gif" /></div>
-                            </div>
-                        </div><!-- content -->
-                    </div><!-- central -->
+                    <div class="form col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <div id="central">
+                            <div class="content">
+                                <div id="message">
+                                    <form id="frmContact" action="" method="POST" novalidate="novalidate">
+                                        <div class="field">
+                                            <input type="text" id="name" name="name" placeholder=" Nombre:"
+                                                title="Please enter your name" class="required" aria-required="true"
+                                                required>
+                                        </div>
+                                        <div class="field">
+                                            <input type="text" id="email" name="email"
+                                                placeholder=" E-mail o teléfono de contacto:"
+                                                title="Please enter your email address" class="required email"
+                                                aria-required="true" required>
+                                        </div>
+                                        <div class="field">
+                                            <input type="text" id="phone" name="phone"
+                                                placeholder=" Enter your phone number here"
+                                                title="Nombre de la empresa:" class="required phone"
+                                                aria-required="true" required>
+                                        </div>
+                                        <div class="field">
+                                            <textarea id="comment-content" name="content"
+                                                placeholder=" Mensaje:"></textarea>
+                                        </div>
+                                        <div class="g-recaptcha" data-sitekey="<?php echo SITE_KEY; ?>"></div>
+                                        <div id="mail-status"></div>
+                                        <button type="Submit" id="send-message" style="clear:both;">ENVIAR</button>
+                                    </form>
+                                    <div id="loader-icon" style="display:none;"><img src="img/loader.gif" /></div>
+                                </div>
+                            </div><!-- content -->
+                        </div><!-- central -->
+                    </div>
+
                 </div>
 
             </div>
 
-        </div>
+            <div class="footer">
+                <div class="row">
+                    <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                        <img class="logo-pink" src="foto/logo_pink.svg" alt="Voice cloud">
+                    </div>
 
-        <div class="footer">
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-                    <img class="logo-pink" src="foto/logo_pink.svg" alt="Voice cloud">
+                    <h5 class="col-sm-12 col-md-6 col-lg-6 col-xl-6">© 2019 Voice Cloud. Todos los derechos
+                        reservados.</h5>
                 </div>
-                
-                <h5 class="col-sm-12 col-md-6 col-lg-6 col-xl-6">© 2019 Voice Cloud. Todos los derechos
-                    reservados.</h5>
             </div>
         </div>
     </div>
 </section>
-</body>
