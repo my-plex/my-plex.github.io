@@ -68,13 +68,42 @@
         });
     </script> -->
     <script>
-        $(document).ready(function () {
-            $('hamburger-menu ul').hide();
-            $('.hamburger-menu ul li').click(function () {
-            $('.hamburger-menu ul').slideToggle(100);
-  
+        // $(document).ready(function () {
+        //     $('hamburger-menu ul').hide();
+        //     $('.hamburger-menu ul li').click(function () {
+        //     $('.hamburger-menu ul').slideToggle(100);
+        //     hamburger-menu.remove('js-opened');
+        //     });
+        // });
+        $(function(){
+
+            var menu = {
+                open: $('.menu__btn'),
+                item: $('.menu__box a[href*="#"], .navigation a[href*="#"]')
+            };
+
+            function mobileNavigationToggle(openButton) {
+                openButton
+                    .parents('.hamburger-menu')
+                    .toggleClass('opened')
+                    .find('.menu__box')
+                    .fadeToggle('fast');
+            }
+
+            menu.open.on('click', function(){
+                mobileNavigationToggle($(this));
             });
-        });        
+
+            menu.item.on('click', function (e) {
+                var section = '#' + $(this).attr('href').split('#')[1];
+                if ($(section).length) {
+                    e.preventDefault();
+                    $('html, body').animate({scrollTop: $(section).offset().top}, 1000);
+                }
+                mobileNavigationToggle(menu.open);
+            });
+
+        });
     </script>
 </head>
 
@@ -90,11 +119,10 @@
     <div class="container">
 
         <div class="hamburger-menu">
-            <input id="menu__toggle" type="checkbox">
-            <label class="menu__btn" for="menu__toggle">
+            <div class="menu__btn">
                 <span></span>
-            </label>
-            <ul class="menu__box ">
+            </div>
+            <ul class="menu__box">
                 <li><a class="menu__item" href="#sobre-nosotros">SOBRE NOSOTROS</a></li>
                 <li><a class="menu__item" href="#servicios">SERVICIOS</a></li>
                 <li><a class="menu__item" href="#apoyo">APOYO</a></li>
@@ -181,7 +209,7 @@
 
 <section class="sobre-nosotros">
     <div class="container">
-        <a name="sobre-nosotros"></a>
+        <a id="sobre-nosotros"></a>
         <h2>SOBRE NOSOTROS</h2>
         <div class="row">
             <h5 class="col-sm-12 col-md-6 col-lg-6 col-xl-6 margin-top-53">
@@ -212,19 +240,19 @@
         <div class="padding-buttom-98">
             <div class="row">
                 <div class="text-center col-sm-12 col-md-6 col-xl-3">
-                    <img class="icon padding-left-11" src="foto/EN_CASA.svg" alt="EN CASA">
+                    <img class="icon padding-left-11" src="foto/EN_CASA-.svg" alt="EN CASA">
                     <h4 class="text-icon text-violet">EN CASA</h4>
                 </div>
                 <div class="text-center col-sm-12 col-md-6 col-xl-3">
-                    <img class="icon" src="foto/EN_EL_RABAJO.svg" alt="EN EL RABAJO">
+                    <img class="icon" src="foto/EN_EL_RABAJO-.svg" alt="EN EL RABAJO">
                     <h4 class="text-icon text-violet">EN EL RABAJO</h4>
                 </div>
                 <div class="text-center col-sm-12 col-md-6 col-xl-3">
-                    <img class="icon" src="foto/DE_VIAJE_DE_NEGOCIOS.svg" alt="DE VIAJE DE NEGOCIOS">
+                    <img class="icon" src="foto/DE_VIAJE_DE_NEGOCIOS-.svg" alt="DE VIAJE DE NEGOCIOS">
                     <h4 class="text-icon text-violet">DE VIAJE<br>DE NEGOCIOS</h4>
                 </div>
                 <div class="text-center col-sm-12 col-md-6 col-xl-3">
-                    <img class="icon" src="foto/DE_VACACIONES.svg" alt="DE VACACIONES">
+                    <img class="icon" src="foto/DE_VACACIONES-.svg" alt="DE VACACIONES">
                     <h4 class="text-icon text-violet">DE VACACIONES</h4>
                 </div>
             </div>
@@ -293,26 +321,26 @@
 
 <section class="servicios">
     <div class="container">
-        <a name="servicios"></a>
+        <a id="servicios"></a>
         <h2 class="padding-buttom-53">
             NOS DIFERENCIA DE LOS DEMAS
         </h2>
 
         <div class="row">
             <div class="text-center col-sm-12 col-md-6 col-xl-3">
-                <img class="icon" src="foto/CALIDAD.svg" alt="CALIDAD">
+                <img class="icon" src="foto/CALIDAD-.svg" alt="CALIDAD">
                 <h4 class="text-icon text-violet">CALIDAD</h4>
             </div>
             <div class="text-center col-sm-12 col-md-6 col-xl-3">
-                <img class="icon" src="foto/SENCILLEZ.svg" alt="SENCILLEZ">
+                <img class="icon" src="foto/SENCILLEZ-.svg" alt="SENCILLEZ">
                 <h4 class="text-icon text-violet">SENCILLEZ</h4>
             </div>
             <div class="text-center col-sm-12 col-md-6 col-xl-3">
-                <img class="icon" src="foto/FIABILIDAD.svg" alt="FIABILIDAD">
+                <img class="icon" src="foto/FIABILIDAD-.svg" alt="FIABILIDAD">
                 <h4 class="text-icon text-violet">FIABILIDAD</h4>
             </div>
             <div class="text-center col-sm-12 col-md-6 col-xl-3">
-                <img class="icon" src="foto/SOPORTE.svg" alt="SOPORTE">
+                <img class="icon" src="foto/SOPORTE-.svg" alt="SOPORTE">
                 <h4 class="text-icon text-violet">SOPORTE</h4>
             </div>
         </div>
@@ -324,7 +352,7 @@
 
 <section class="apoyo">
     <div class="container">
-        <a name="apoyo"></a>
+        <a id="apoyo"></a>
         <h2 class="text-white">
             Otras características<br>
             y funcionalidades de VOICE CLOUD
@@ -335,7 +363,7 @@
         </h4>
         <div class="row">
             <div class="text-center col-sm-12 col-md-6 col-xl-3">
-                <img class="icon" src="foto/FÁCIL_CONFIGURACIÓN.svg" alt="FÁCIL CONFIGURACIÓN">
+                <img class="icon" src="foto/FÁCIL_CONFIGURACIÓN-.svg" alt="FÁCIL CONFIGURACIÓN">
                 <h4 class="text-icon text-white">FÁCIL<br>CONFIGURACIÓN</h4>
                 <h5 class="text-white text-caption">
                     Get up and running quickly.
@@ -344,7 +372,7 @@
                 </h5>
             </div>
             <div class="text-center col-sm-12 col-md-6 col-xl-3">
-                <img class="icon" src="foto/INTEGRACIÓN_CON_EL_MÓVIL.svg" alt="INTEGRACIÓN CON EL MÓVIL">
+                <img class="icon" src="foto/INTEGRACIÓN_CON_EL_MÓVIL-.svg" alt="INTEGRACIÓN CON EL MÓVIL">
                 <h4 class="text-icon text-white">INTEGRACIÓN<br>CON EL MÓVIL</h4>
                 <h5 class="text-white text-caption">
                     Make or receive calls from
@@ -354,7 +382,7 @@
                 </h5>
             </div>
             <div class="text-center col-sm-12 col-md-6 col-xl-3">
-                <img class="icon" src="foto/CALIDAD_DE_COMUNICACIÓN.svg" alt="CALIDAD DE COMUNICACIÓN">
+                <img class="icon" src="foto/CALIDAD_DE_COMUNICACIÓN-.svg" alt="CALIDAD DE COMUNICACIÓN">
                 <h4 class="text-icon text-white">CALIDAD<br>DE COMUNICACIÓN</h4>
                 <h5 class="text-white text-caption">
                     Get crystal-clear call quality with
@@ -362,7 +390,7 @@
                 </h5>
             </div>
             <div class="text-center col-sm-12 col-md-6 col-xl-3">
-                <img class="icon" src="foto/FÁCIL_MANEJO.svg" alt="FÁCIL MANEJO">
+                <img class="icon" src="foto/FÁCIL_MANEJO-.svg" alt="FÁCIL MANEJO">
                 <h4 class="text-icon text-white">FÁCIL<br>MANEJO</h4>
                 <h5 class="text-white text-caption">
                     Manage your services, pay your
@@ -378,7 +406,7 @@
 <section class="back">
     <div class="contacto">
         <div class="container ">
-            <a name="contacto"></a>
+            <a id="contacto"></a>
             <h2>
                 ¿CÓMO EMPEZAR?
             </h2>

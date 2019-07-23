@@ -25,9 +25,9 @@
 
 /* Hamburger-menu */
 .hamburger-menu {
-    
     z-index: 100;
 }
+
 .inverted {
 	filter: invert(100%);
 }
@@ -72,10 +72,10 @@
   }
   /* контейнер меню */
 .menu__box {
-    display: block;
+    display: none;
     position: fixed;
-    visibility: hidden;
-    top: 0;   
+    top: 0;
+    right: 0;
     width: 50%;
     height: 365px;
     margin: 0;
@@ -110,20 +110,16 @@
     text-decoration: unset;
   }
 
-  #menu__toggle:checked ~ .menu__btn > span {
+.hamburger-menu.opened .menu__btn > span {
     transform: rotate(45deg);
   }
-  #menu__toggle:checked ~ .menu__btn > span::before {
+.hamburger-menu.opened .menu__btn > span::before {
     top: 0;
     transform: rotate(0);
   }
-  #menu__toggle:checked ~ .menu__btn > span::after {
+.hamburger-menu.opened .menu__btn > span::after {
     top: 0;
     transform: rotate(90deg);
-  }
-  #menu__toggle:checked ~ .menu__box {
-    visibility: visible;
-    right: 0;
   }
 
 /* Fonts */
@@ -189,8 +185,7 @@ h1 {
 }
 
 h2 {
-    font-size: 48px;
-    letter-spacing: 5px;
+    font-size: 48px !important;
     line-height: 1.25;
     color: #780050;
     font-family: 'Museo Sans';
@@ -237,15 +232,74 @@ h5 {
 
 .text-icon {
     text-align: center;
-    padding: 49px 0 53px 0;
-    
+    padding: 50px 0 38px 0;    
 }
 
 .icon {
     margin: 0 50px;
-    max-width: 196px;
-    max-height: 175px;
+    max-width: 200px;
+    max-height: 200px;
     min-height: 175px;    
+}
+
+.EN_CASA {
+    width: 170px;
+    height: 178px;
+}
+
+.EN_EL_RABAJO {
+    width: 192px;
+    height: 159px;
+}
+
+.DE_VIAJE_DE_NEGOCIOS {
+    width: 196px;
+    height: 160px;
+}
+
+.DE_VACACIONES {
+    width: 192px;
+    height: 161px;
+}
+
+.CALIDAD {
+    width: 142px;
+    height: 175px;
+}
+
+.SENCILLEZ {
+    width: 173px;
+    height: 174px;
+}
+
+.FIABILIDAD {
+    width: 184px;
+    height: 177px;
+}
+
+.SOPORTE {
+    width: 178px;
+    height: 178px;
+}
+
+.FÁCIL_CONFIGURACIÓN {
+    width: 104px;
+    height: 177px;
+}
+
+.INTEGRACIÓN_CON_EL_MÓVIL {
+    width: 189px;
+    height: 189px;
+}
+
+.CALIDAD_DE_COMUNICACIÓN {
+    width: 150px;
+    height: 177px;
+}
+
+.FÁCIL_MANEJO {
+    width: 189px;
+    height: 102px;
 }
 
 /* Main */
@@ -446,7 +500,7 @@ h5 {
 }
 
 .text-caption {
-    padding: 20px 0 98px 0;
+    padding: 0 0 98px 0;
 }
 
 /* Contacto */
