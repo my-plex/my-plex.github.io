@@ -187,10 +187,12 @@ h1 {
 h2 {
     font-size: 48px !important;
     line-height: 1.25;
+    font-weight: 500;
     color: #780050;
-    font-family: 'Museo Sans';
+    font-family: "Museo Sans";
     padding-top: 110px;
     text-transform: uppercase;
+    margin-bottom: unset !important;
 }
 @media only screen and (max-width: 420px) {
     h2 {
@@ -198,17 +200,22 @@ h2 {
     }
 }
 h3 {
-    font-size: 36px;
+    font-size: 36px !important;
     color: black;
-    font-family: "Museo Sans";
+    font-family: "Museo Sans" !important;
 }
 h4 {
     font-size: 24px;
     color: black;
+    font-weight: unset !important;
+    margin-bottom: unset !important;
 }
 h5 {
-    font-size: 18px;
+    font-family: "Roboto" !important;
+    font-size: 18px !important;
     color: black;
+    font-weight: unset !important;
+    margin-bottom: unset !important;
 }
 
 .no-uppercase {
@@ -236,13 +243,13 @@ h5 {
 }
 
 .icon {
-    margin: 0 50px;
+    /* margin: 0 50px; */
     max-width: 200px;
     max-height: 200px;
     min-height: 175px;    
 }
 
-.EN_CASA {
+/* .EN_CASA {
     width: 170px;
     height: 178px;
 }
@@ -300,7 +307,7 @@ h5 {
 .FÁCIL_MANEJO {
     width: 189px;
     height: 102px;
-}
+} */
 
 /* Main */
 
