@@ -202,6 +202,11 @@
 .padding-buttom-98 {
     padding-bottom: 98px;
 }
+@media only screen and (max-width: 420px) {
+    .padding-buttom-98 {
+        padding-bottom: unset;        
+    }
+}
 .padding-left-9 {
     padding-left: 11px;
 }
