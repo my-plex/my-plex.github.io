@@ -75,7 +75,7 @@
         //     hamburger-menu.remove('js-opened');
         //     });
         // });
-        $(function(){
+        $(function () {
 
             var menu = {
                 open: $('.menu__btn'),
@@ -90,7 +90,7 @@
                     .fadeToggle('fast');
             }
 
-            menu.open.on('click', function(){
+            menu.open.on('click', function () {
                 mobileNavigationToggle($(this));
             });
 
@@ -98,7 +98,7 @@
                 var section = '#' + $(this).attr('href').split('#')[1];
                 if ($(section).length) {
                     e.preventDefault();
-                    $('html, body').animate({scrollTop: $(section).offset().top}, 1000);
+                    $('html, body').animate({ scrollTop: $(section).offset().top }, 1000);
                 }
                 mobileNavigationToggle(menu.open);
             });
@@ -193,7 +193,7 @@
 </section>
 <section class="only-mobile">
     <div class="container">
-        <h2 class="no-uppercase padding-buttom-53">
+        <h2 class="no-uppercase padding-buttom-53 text-left text-black">
             La mejor solución para<br>
             mantener tu negocio<br>
             conectado 24/7
@@ -482,11 +482,19 @@
                     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <img class="logo-pink" src="foto/logo_pink.svg" alt="Voice cloud">
                     </div>
-
                     <h5 class="col-sm-12 col-md-6 col-lg-6 col-xl-6">© 2019 Voice Cloud. Todos los derechos
-                        reservados.</h5>
+                        reservados.</h5>                    
                 </div>
             </div>
+            <div class="footer-only-mobile">
+                <div class="row">
+                    
+                        <h5 class="col">© 2019 Voice Cloud. <br>
+                            Todos los derechos reservados.</h5>
+                    
+                </div>
+            </div>
+
         </div>
     </div>
 </section>

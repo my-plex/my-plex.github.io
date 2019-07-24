@@ -21,12 +21,29 @@
         margin-top: 100px;
     }
 }
+@media only screen and (max-width: 550px) {
+    .logo-white {
+        margin-top: 50px;
+        max-width: 300px;
+    }
+}
+@media only screen and (max-width: 420px) {
+    .logo-white {
+        margin-top: 50px;
+        max-width: 250px;
+    }
+}
 
 .logo-pink {
     max-width: 191px;
     max-height: 79px;
     width: 191px;
     height: 79px;
+}
+@media only screen and (max-width: 420px) {
+    .logo-pink {
+       display: none;
+    }
 }
 
 /* Hamburger-menu */
@@ -144,6 +161,9 @@
 .text-violet {
     color: #780050;
 }
+.text-black {
+    color: black;
+}
 
 .collumn {
     display: flex;
@@ -202,7 +222,8 @@ h2 {
 }
 @media only screen and (max-width: 420px) {
     h2 {
-        font-size: 1.5rem !important;
+        font-size: 30px !important;
+        text-align: center;
     }
 }
 h3 {
@@ -210,7 +231,34 @@ h3 {
     color: black;
     font-family: "Museo Sans" !important;
 }
+@media only screen and (max-width: 420px) {   
+    h2 {
+        font-size: 24px !important;
+        line-height: 30px !important;
+        padding-top: 51px;        
+    }
+    h3 {
+        font-size: 20px !important;
+        line-height: 25px;        
+    }
+    h4 {
+        font-size: 15px !important;
+        line-height: 25px;        
+    }
+    h5 {
+        font-size: 15px !important;
+        line-height: 21px;        
+    }
+}
+@media only screen and (max-width: 420px) {   
+    .text-contact {
+        font-size: 15px !important;
+        line-height: 21px;
+        color: #0078d7 !important;        
+    }
+}
 h4 {
+    font-family: "Museo Sans" !important;
     font-size: 24px;
     color: black;
     font-weight: unset !important;
@@ -227,7 +275,11 @@ h5 {
 .no-uppercase {
     text-transform: unset;
 }
-
+@media only screen and (max-width: 420px) {   
+    .no-uppercase {
+        padding-bottom: 24px;        
+    }
+}
 /* Icon */
 
 .line-icon {
@@ -247,12 +299,24 @@ h5 {
     text-align: center;
     padding: 50px 0 38px 0;    
 }
+@media only screen and (max-width: 420px) {
+    .text-icon {
+        padding: 21px 0 23px 0;
+        font-size: 17px;
+    }
+}
 
 .icon {
     /* margin: 0 50px; */
     max-width: 200px;
     max-height: 200px;
-    min-height: 175px;    
+    /* min-height: 175px;     */
+}
+@media only screen and (max-width: 420px) {
+    .icon {
+        max-width: 95px;
+        max-height: 95px;
+    }
 }
 
 /* .EN_CASA {
@@ -461,7 +525,7 @@ h5 {
 /* Only-mobile */
 
 .only-mobile {
-    background: white;
+    background: white;    
 }
 @media only screen and (max-width: 1025px) {
     .only-mobile {
@@ -473,6 +537,8 @@ h5 {
         display: none; 
     }    
 }
+
+
 
 /* Sobre-nosotros */
 
@@ -515,6 +581,12 @@ h5 {
 .text-caption {
     padding: 0 0 98px 0;
 }
+@media only screen and (max-width: 420px) {
+    .text-caption {
+        padding: 0 50px 50px 50px;
+        font-size: 15px !important;
+    }
+}
 
 /* Contacto */
 
@@ -523,6 +595,11 @@ h5 {
     padding-top: 43px;
     width: 100%;
     background-image: linear-gradient(to bottom, #f2f1f1, #f5f4f5, #f8f8f8, #fcfcfc, #ffffff);
+}
+@media only screen and (max-width: 420px) {
+    .back {
+        padding-top: unset;        
+    }
 }
 .contacto {
     background-image: url(foto/map.svg);
@@ -570,7 +647,7 @@ h5 {
 
 /* Send form */
 
-#message {  padding: 0px 40px 0px 0px; }
+#message {  padding: 0px 0px 0px 0px; }
 		#mail-status {
 			padding: 12px 20px;
 			width: 100%;
@@ -588,6 +665,7 @@ h5 {
     background-color: #ffffff;
     border: 1px solid #cfcfcf;
     margin-bottom: 20px;
+    padding-left: 6px;
 }
 #comment-content {
     width: 100%;
@@ -596,13 +674,14 @@ h5 {
     background-color: #ffffff;
     border: 1px solid #cfcfcf;
     margin-bottom: 20px;
+    padding: 6px;
 }
 @media only screen and (max-width: 450px) {
     #name,
     #email,
     #phone,
     #comment-content {
-    width: 300px;
+    /* width: 300px; */
     }
 }
 
@@ -627,20 +706,43 @@ h5 {
     border: unset;
 }
 
+/* .field input {
+    padding-left: 6px;
+} */
+
 /* Footer */
 
 .footer {    
     width: 100%;
     margin-top: 144px;
 }
+@media only screen and (max-width: 420px) {
+    .footer {
+        display: none; 
+    }    
+}
 
 .footer :first-child {
     text-align: left;
     align-items: baseline;
-    margin-bottom: 53px;
+    margin-bottom: 25px;
 }
 .footer :last-child {
     text-align: left;
     align-items: baseline;
-    margin-bottom: 53px;
+    margin-bottom: 25px;
 }
+.footer-only-mobile {
+    padding: 50px 0;
+    display: none;
+}
+@media only screen and (max-width: 420px) {
+    .footer-only-mobile {
+        display: block; 
+    }    
+}
+/* @media only screen and (min-width: 1024px) {
+    .footer-only-mobile {
+        display: none; 
+    }    
+} */
