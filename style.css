@@ -59,11 +59,11 @@
         display: none;
     }
 }
-/* скрываем чекбокс */
+/* Hide checkbox */
 #menu__toggle {
     opacity: 0;
   }
-  /* стилизуем кнопку */
+  /* Stylize the button */
   .menu__btn {
     display: flex; 
     align-items: center; 
@@ -75,7 +75,7 @@
     cursor: pointer;
     z-index: 100;
   }
-  /* добавляем "гамбургер" */
+  /* Add "hamburger" */
   .menu__btn > span,
   .menu__btn > span::before,
   .menu__btn > span::after {
@@ -93,7 +93,7 @@
     content: '';
     top: 8px;
   }
-  /* контейнер меню */
+  /* Menu container */
 .menu__box {
     display: none;
     position: fixed;
@@ -115,7 +115,7 @@
     }
 }
   
-  /* элементы меню */
+  /* Menu items */
   .menu__item {
     display: block;
     padding: 12px 24px;
@@ -211,10 +211,6 @@
     padding-left: 11px;
 }
 
-
-h1 {
-}
-
 h2 {
     font-size: 48px !important;
     line-height: 1.25;
@@ -285,6 +281,7 @@ h5 {
         padding-bottom: 24px;        
     }
 }
+
 /* Icon */
 
 .line-icon {
@@ -312,10 +309,8 @@ h5 {
 }
 
 .icon {
-    /* margin: 0 50px; */
     max-width: 200px;
     max-height: 200px;
-    /* min-height: 175px;     */
 }
 @media only screen and (max-width: 420px) {
     .icon {
@@ -323,66 +318,6 @@ h5 {
         max-height: 95px;
     }
 }
-
-/* .EN_CASA {
-    width: 170px;
-    height: 178px;
-}
-
-.EN_EL_RABAJO {
-    width: 192px;
-    height: 159px;
-}
-
-.DE_VIAJE_DE_NEGOCIOS {
-    width: 196px;
-    height: 160px;
-}
-
-.DE_VACACIONES {
-    width: 192px;
-    height: 161px;
-}
-
-.CALIDAD {
-    width: 142px;
-    height: 175px;
-}
-
-.SENCILLEZ {
-    width: 173px;
-    height: 174px;
-}
-
-.FIABILIDAD {
-    width: 184px;
-    height: 177px;
-}
-
-.SOPORTE {
-    width: 178px;
-    height: 178px;
-}
-
-.FÁCIL_CONFIGURACIÓN {
-    width: 104px;
-    height: 177px;
-}
-
-.INTEGRACIÓN_CON_EL_MÓVIL {
-    width: 189px;
-    height: 189px;
-}
-
-.CALIDAD_DE_COMUNICACIÓN {
-    width: 150px;
-    height: 177px;
-}
-
-.FÁCIL_MANEJO {
-    width: 189px;
-    height: 102px;
-} */
 
 /* Main */
 
@@ -543,8 +478,6 @@ h5 {
     }    
 }
 
-
-
 /* Sobre-nosotros */
 
 .sobre-nosotros {
@@ -566,8 +499,7 @@ h5 {
 }
 .assist {
     text-align: center;
-    margin-top: 25px;    
-
+    margin-top: 25px;
 }
 @media only screen and (max-width: 700px) {
     .assist {
@@ -579,7 +511,6 @@ h5 {
 
 .apoyo {
     width: 100%;
-    /* background-color: #6a032d; */
     background: linear-gradient(90deg, rgba(117,2,79,1) 0%, rgba(89,23,69,1) 100%);
 }
 
@@ -681,14 +612,6 @@ h5 {
     margin-bottom: 20px;
     padding: 6px;
 }
-@media only screen and (max-width: 450px) {
-    #name,
-    #email,
-    #phone,
-    #comment-content {
-    /* width: 300px; */
-    }
-}
 
 .g-recaptcha {
     margin-bottom: 20px;
@@ -710,10 +633,6 @@ h5 {
     background-color: #780050;
     border: unset;
 }
-
-/* .field input {
-    padding-left: 6px;
-} */
 
 /* Footer */
 
@@ -757,10 +676,3 @@ h5 {
         display: block; 
     }        
 }
-
-
-/* @media only screen and (min-width: 1024px) {
-    .footer-only-mobile {
-        display: none; 
-    }    
-} */
