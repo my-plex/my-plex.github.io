@@ -1,0 +1,93 @@
+/* HEADER */
+
+.header {
+    padding: 72px 0 0 0;
+}
+
+.rhea-logo {
+    width: 57px;
+    height: 57px;
+    vertical-align: top;
+}
+
+.text-logo {
+    padding-left: 22px;
+    font-size: 40px;
+    letter-spacing: 0px;
+    /* color: #4498f3; */
+    color: #5791cd;
+    font-family: "Catamaran";
+    font-weight: 500;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav :first-child {
+    padding: 0 32px 0 0;
+}
+
+.nav :last-child {
+    margin: 0 0 0 32px;
+    width: 150px;
+    height: 58px;
+}
+
+.menu {
+    font-size: 20px;
+    letter-spacing: 0px;
+    line-height: 15px;
+    color: #bab8b8;
+    font-family: "Nunito";
+    font-weight: 400;
+    text-align: center;
+    padding: 0 32px;
+    text-decoration: unset !important;    
+}
+
+.menu :hover {
+    color: #4497f3;
+    font-family: "Nunito";
+    font-weight: 600;
+    cursor: pointer;       
+}
+
+/* BUTTON */
+
+.button-blue-border {
+    font-size: 20px;
+    letter-spacing: 0px;
+    line-height: 35px;
+    color: #3984f3;
+    font-family: "Nunito Sans";
+    font-weight: 600;
+    border: #3984f3 3px solid;
+    padding: 9px 0;
+}
+
+.button-blue {
+    width: 202px;
+    height: 58px;
+    background-color: #3984f3;
+    font-size: 20px;
+    letter-spacing: 0px;
+    line-height: 35px;
+    color: #ffffff;
+    font-family: "Nunito Sans";
+    font-weight: 600;
+}
+
+/* TEXT */
+
+h1 {
+    font-size: 75px;
+    letter-spacing: 3px;
+    line-height: 80px;
+    color: #091e40;
+    font-family: "Nunito Sans";
+    font-weight: 800;
+    text-align: right;
+}
