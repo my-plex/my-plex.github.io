@@ -10,8 +10,17 @@
     width: 78px;
     height: 6px;
     background-color: #3984f3;
+    margin: 52px 46% 62px 47%;
+}
+
+.blue-line-left {
+    width: 78px;
+    height: 6px;
+    background-color: #3984f3;
     margin: 52px 0 62px 0;
 }
+
+
 
 /* BUTTON */
 
@@ -77,6 +86,10 @@
     color: #81858e;
     font-family: "Nunito Sans";
     font-weight: 400;    
+}
+
+.center {
+    text-align: center;
 }
 
 /* HEADER */
@@ -181,4 +194,10 @@
 
 .width-unset {
     width: unset !important;
+}
+
+/* VIDEO SECTION */
+
+.pading-0-200 {
+    padding: 0 200px;
 }
